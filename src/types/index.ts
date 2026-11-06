@@ -45,3 +45,10 @@ export interface ExperienceItem {
   period: string;
   highlights: string[];
 }
+
+export interface ContactItem {
+  title: string;
+  user: string;
+  url: string;
+  icon: IconType;
+}

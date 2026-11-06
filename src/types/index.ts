@@ -37,3 +37,11 @@ export interface TechnologyGroup {
   title: string;
   items: Technology[];
 }
+
+export interface ExperienceItem {
+  role: string;
+  type: string;
+  company: string;
+  period: string;
+  highlights: string[];
+}

@@ -16,3 +16,11 @@ export interface CertificateType {
   progress?: number;
   status?: string;
 }
+
+export interface Project {
+  title: string;
+  description: string;
+  url: string;
+  githubUrl: string;
+  image: string;
+}

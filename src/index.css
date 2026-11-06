@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+  --color-bg-from: var(--bg-from);
+  --color-bg-via: var(--bg-via);
+  --color-bg-to: var(--bg-to);
+  --color-content: var(--content);
+  --color-accent: var(--accent);
+  --color-completion: var(--completion);
+}
+
+:root {
+  --bg-from: #2b0a0a;
+  --bg-via: #1f0c25;
+  --bg-to: #031220;
+  --content: #fff;
+  --accent: #c084fc;
+  --completion: #5ee9b5;
+}

@@ -1,3 +1,5 @@
+import type { IconType } from "react-icons";
+
 export interface DegreeType {
   title: string;
   place: string;
@@ -23,4 +25,15 @@ export interface Project {
   url: string;
   githubUrl: string;
   image: string;
+}
+
+interface Technology {
+  name: string;
+  icon: IconType;
+  color: string;
+}
+
+export interface TechnologyGroup {
+  title: string;
+  items: Technology[];
 }

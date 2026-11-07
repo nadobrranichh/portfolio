@@ -1,14 +1,25 @@
 import { experience } from "../../lists/experience";
+import { motion } from "motion/react";
+import { fade } from "../../motion/variants";
 
 export default function Experience() {
   return (
     <section id="experience">
-      <h2 className="text-4xl font-semibold tracking-tight text-content">
+      <motion.h2
+        variants={fade()}
+        initial="hidden"
+        animate="visible"
+        className="text-4xl font-semibold tracking-tight text-content"
+      >
         Experience
-      </h2>
+      </motion.h2>
       <div className="flex flex-col gap-2 border-t border-b border-slate-700 text-content mt-10">
         {experience.map((exp) => (
-          <div
+          <motion.div
+            variants={fade()}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ amount: 0.5, once: true }}
             key={exp.period}
             className="grid grid-cols-2 lg:flex lg:items-center gap-5 lg:gap-10 p-6 lg:p-10 transition-all hover:bg-content/5"
           >
@@ -30,7 +41,7 @@ export default function Experience() {
                 <p key={h}>&bull; {h}</p>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

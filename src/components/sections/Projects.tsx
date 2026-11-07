@@ -1,15 +1,32 @@
 import { projects } from "../../lists/projects";
 import ProjectCard from "../ProjectCard";
+import { motion } from "motion/react";
+import { fade } from "../../motion/variants";
+import useBreakpoints from "../../hooks/useBreakpoints";
 
 export default function Projects() {
+  const { isLg } = useBreakpoints();
   return (
     <section id="projects" className="text-content">
-      <h2 className="text-4xl font-semibold">Things I've built</h2>
-      <div className="flex flex-col md:flex-row flex-wrap md:justify-between gap-4 md:gap-0 mt-10">
+      <motion.h2
+        variants={fade()}
+        initial="hidden"
+        whileInView="visible"
+        className="text-4xl font-semibold"
+      >
+        Things I've built
+      </motion.h2>
+      <motion.div
+        variants={fade({ withStagger: true })}
+        initial="hidden"
+        whileInView="visible"
+        {...(isLg && { amount: 0.4, once: true })}
+        className="flex flex-col md:flex-row flex-wrap md:justify-between gap-4 md:gap-0 mt-10"
+      >
         {projects.map((p) => (
           <ProjectCard key={p.title} data={p} />
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }

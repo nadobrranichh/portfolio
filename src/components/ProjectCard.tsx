@@ -3,10 +3,20 @@ import { LuArrowUpRight } from "react-icons/lu";
 import { containerStyle } from "../constants";
 import type { Project } from "../types";
 import { Link } from "react-router";
+import { motion } from "motion/react";
+import { fade } from "../motion/variants";
+import useBreakpoints from "../hooks/useBreakpoints";
 
 export default function ProjectCard({ data }: { data: Project }) {
+  const { isLg } = useBreakpoints();
   return (
-    <div
+    <motion.div
+      variants={fade()}
+      {...(!isLg && {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { amount: 0.2, once: true },
+      })}
       className={`border-content/15 bg-content/10 rounded-4xl overflow-hidden flex flex-col transition hover:scale-102 max-w-105`}
     >
       <img src={data.image} className="self-center h-60 object-cover" />
@@ -40,6 +50,6 @@ export default function ProjectCard({ data }: { data: Project }) {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -1,11 +1,23 @@
 import type { DegreeType } from "../types";
 import Badge from "./Badge";
+import { motion } from "motion/react";
+import { fade } from "../motion/variants";
+import useBreakpoints from "../hooks/useBreakpoints";
 
 export default function DegreeItem({ item }: { item: DegreeType }) {
   const isDone = item.status === "done";
+  const { isLg } = useBreakpoints();
 
   return (
-    <li className="relative pl-8 lg:p-0">
+    <motion.li
+      variants={fade()}
+      {...(!isLg && {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { amount: 0.5, once: true },
+      })}
+      className="relative pl-8 lg:p-0"
+    >
       <span
         className={
           "absolute left-0 top-1.5 h-3.5 w-3.5 rounded-full lg:left-1/2 -translate-x-1/2 lg:-top-1.5 " +
@@ -36,6 +48,6 @@ export default function DegreeItem({ item }: { item: DegreeType }) {
           ))}
         </div>
       )}
-    </li>
+    </motion.li>
   );
 }

@@ -1,9 +1,21 @@
 import { Link, type To } from "react-router";
 import type { CertificateType } from "../types";
+import { motion } from "motion/react";
+import { fade } from "../motion/variants";
+import useBreakpoints from "../hooks/useBreakpoints";
 
 export default function CertificateCard({ item }: { item: CertificateType }) {
+  const { isLg } = useBreakpoints();
+
   return (
-    <li>
+    <motion.li
+      variants={fade()}
+      {...(!isLg && {
+        initial: "hidden",
+        whileInView: "visible",
+        viewport: { amount: 0.5, once: true },
+      })}
+    >
       <Link
         to={(item.url as To) || ""}
         target="_blank"
@@ -27,6 +39,6 @@ export default function CertificateCard({ item }: { item: CertificateType }) {
           </span>
         )}
       </Link>
-    </li>
+    </motion.li>
   );
 }

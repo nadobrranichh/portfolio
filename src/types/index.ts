@@ -34,12 +34,16 @@ export interface TechnologyGroup {
   items: Technology[];
 }
 
-export interface ExperienceItem {
-  role: string;
-  type: string;
+export interface ExperienceItemType {
   company: string;
-  period: string;
-  highlights: string[];
+  i18nKey: string;
+}
+
+export interface ExperienceValues {
+  time: string[];
+  title: string;
+  type: string;
+  description: string[];
 }
 
 export interface ContactItem {

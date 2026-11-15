@@ -6,9 +6,15 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../motion/variants";
 import useBreakpoints from "../hooks/useBreakpoints";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectCard({ data }: { data: Project }) {
   const { isLg } = useBreakpoints();
+  const { t } = useTranslation();
+  const translations = t(data.i18nKey, { returnObjects: true }) as {
+    title: string;
+    description: string;
+  };
   return (
     <motion.div
       variants={fade()}
@@ -23,10 +29,10 @@ export default function ProjectCard({ data }: { data: Project }) {
       <div className="py-4 px-6 flex-1 flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight mb-2">
-            {data.title}
+            {translations.title}
           </h2>
-          <p className="text-content/70 leading-relaxed line-clamp-3">
-            {data.description}
+          <p className="text-content/70 leading-relaxed md:line-clamp-3">
+            {translations.description}
           </p>
         </div>
 
@@ -36,7 +42,7 @@ export default function ProjectCard({ data }: { data: Project }) {
             target="_blank"
             className={`${containerStyle} group px-4! py-2! gap-1.5! transition hover:scale-105 text-content! bg-transparent!`}
           >
-            Open
+            {t("projects.open")}
             <LuArrowUpRight className="size-4 self-center transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
 

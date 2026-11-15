@@ -63,5 +63,23 @@
         ]
       }
     ]
+  },
+  "projects": {
+    "title": "Things I've built",
+    "open": "Open",
+    "items": [
+      {
+        "title": "Apollonia",
+        "description": "A web application for a dental clinic with an online shop and checkout functionality."
+      },
+      {
+        "title": "DriftBoard",
+        "description": "A Trello-inspired task management application with team collaboration and real-time updates."
+      },
+      {
+        "title": "Scribbble",
+        "description": "A Paint-inspired drawing web application that allows multiple users to draw together on a shared canvas."
+      }
+    ]
   }
 }

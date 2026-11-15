@@ -16,8 +16,7 @@ export interface CertificateType {
 }
 
 export interface Project {
-  title: string;
-  description: string;
+  i18nKey: string;
   url: string;
   githubUrl: string;
   image: string;

@@ -89,6 +89,14 @@
       }
     ]
   },
+  "blog": {
+    "title": "Coming soon...",
+    "btnText": "Go Back"
+  },
+  "notFound": {
+    "title": "Page Not Found :<",
+    "btnText": "Go Back"
+  },
   "contact": {
     "title": "Let's get to know each other",
     "subtitle": "I'm looking for my next role, remote or on-site in Lviv, Ukraine. Whether it’s an open position, a project, or just a question, my inbox is open.",

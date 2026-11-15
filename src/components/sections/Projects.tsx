@@ -1,7 +1,7 @@
 import { projects } from "../../lists/projects";
 import ProjectCard from "../ProjectCard";
 import { motion } from "motion/react";
-import { fade } from "../../motion/variants";
+import { fade, viewPortValues } from "../../motion/variants";
 import useBreakpoints from "../../hooks/useBreakpoints";
 
 export default function Projects() {
@@ -20,7 +20,7 @@ export default function Projects() {
         variants={fade({ withStagger: true })}
         initial="hidden"
         whileInView="visible"
-        {...(isLg && { amount: 0.4, once: true })}
+        {...(isLg && { viewport: viewPortValues })}
         className="flex flex-col md:flex-row flex-wrap md:justify-between gap-4 md:gap-0 mt-10"
       >
         {projects.map((p) => (

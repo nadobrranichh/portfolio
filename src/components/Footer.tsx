@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { contact } from "../lists/contact";
 import { LuDownload } from "react-icons/lu";
 import { motion } from "motion/react";
-import { fade } from "../motion/variants";
+import { fade, viewPortValues } from "../motion/variants";
 
 export default function Footer() {
   return (
@@ -14,7 +14,7 @@ export default function Footer() {
         variants={fade()}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.5, once: true }}
+        viewport={viewPortValues}
         className="text-4xl font-semibold"
       >
         Let's get to know each other
@@ -23,7 +23,7 @@ export default function Footer() {
         variants={fade()}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.5, once: true }}
+        viewport={viewPortValues}
         className="text-slate-300"
       >
         I'm looking for my next role, remote or on-site in Lviv, Ukraine.
@@ -39,7 +39,7 @@ export default function Footer() {
         className="flex justify-center gap-5"
       >
         {contact.map((item) => (
-          <motion.div variants={fade()}>
+          <motion.div key={item.title} variants={fade()}>
             <Link
               target="_blank"
               key={item.title}
@@ -50,10 +50,7 @@ export default function Footer() {
               <div className="grid grid-cols-[0fr] transition-all duration-400 group-hover:grid-cols-[1fr]">
                 <p className="overflow-hidden text-nowrap">
                   {item.title}
-                  <span className="text-slate-400 opacity-85">
-                    {" "}
-                    {item.user}
-                  </span>
+                  <span className="text-slate-400 opacity-85">{item.user}</span>
                 </p>
               </div>
             </Link>

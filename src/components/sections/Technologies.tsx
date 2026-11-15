@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import { technologies } from "../../lists/technologies";
 import { motion } from "motion/react";
-import { fade } from "../../motion/variants";
+import { fade, viewPortValues } from "../../motion/variants";
 
 export default function Technologies() {
   return (
@@ -9,7 +9,7 @@ export default function Technologies() {
       variants={fade({ withStagger: true })}
       initial="hidden"
       whileInView="visible"
-      viewport={{ amount: 0.2, once: true }}
+      viewport={viewPortValues}
       id="technologies"
     >
       <h2 className="text-4xl font-semibold tracking-tight text-content">

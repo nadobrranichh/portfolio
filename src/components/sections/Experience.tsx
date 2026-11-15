@@ -1,6 +1,6 @@
 import { experience } from "../../lists/experience";
 import { motion } from "motion/react";
-import { fade } from "../../motion/variants";
+import { fade, viewPortValues } from "../../motion/variants";
 
 export default function Experience() {
   return (
@@ -19,7 +19,7 @@ export default function Experience() {
             variants={fade()}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.5, once: true }}
+            viewport={viewPortValues}
             key={exp.period}
             className="grid grid-cols-2 lg:flex lg:items-center gap-5 lg:gap-10 p-6 lg:p-10 transition-all hover:bg-content/5"
           >

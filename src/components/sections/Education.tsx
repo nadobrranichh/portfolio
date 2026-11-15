@@ -3,7 +3,7 @@ import { certificates, degrees, inProgress } from "../../lists/education";
 import DegreeItem from "../DegreeItem";
 import CertificateCard from "../CertificateCard";
 import { motion } from "motion/react";
-import { fade } from "../../motion/variants";
+import { fade, viewPortValues } from "../../motion/variants";
 
 const INITIAL_CERTS = 4;
 
@@ -38,7 +38,7 @@ export default function Education() {
             variants={fade({ withStagger: true })}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.2, once: true }}
+            viewport={viewPortValues}
             className="space-y-10 lg:grid lg:grid-cols-2"
           >
             {degrees.map((d) => (
@@ -56,7 +56,7 @@ export default function Education() {
           variants={fade({ withStagger: true })}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2, once: true }}
+          viewport={viewPortValues}
           className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {visibleCerts.map((c) => (
@@ -81,7 +81,7 @@ export default function Education() {
           variants={fade({ withStagger: true })}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2, once: true }}
+          viewport={viewPortValues}
           className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         >
           {inProgress.map((c) => (

@@ -1,7 +1,7 @@
 import { Link, type To } from "react-router";
 import type { CertificateType } from "../types";
 import { motion } from "motion/react";
-import { fade } from "../motion/variants";
+import { fade, viewPortValues } from "../motion/variants";
 import useBreakpoints from "../hooks/useBreakpoints";
 
 export default function CertificateCard({ item }: { item: CertificateType }) {
@@ -13,7 +13,7 @@ export default function CertificateCard({ item }: { item: CertificateType }) {
       {...(!isLg && {
         initial: "hidden",
         whileInView: "visible",
-        viewport: { amount: 0.5, once: true },
+        viewport: viewPortValues,
       })}
     >
       <Link

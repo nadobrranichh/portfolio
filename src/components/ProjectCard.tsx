@@ -4,7 +4,7 @@ import { containerStyle } from "../constants";
 import type { Project } from "../types";
 import { Link } from "react-router";
 import { motion } from "motion/react";
-import { fade } from "../motion/variants";
+import { fade, viewPortValues } from "../motion/variants";
 import useBreakpoints from "../hooks/useBreakpoints";
 
 export default function ProjectCard({ data }: { data: Project }) {
@@ -15,7 +15,7 @@ export default function ProjectCard({ data }: { data: Project }) {
       {...(!isLg && {
         initial: "hidden",
         whileInView: "visible",
-        viewport: { amount: 0.2, once: true },
+        viewport: viewPortValues,
       })}
       className={`border-content/15 bg-content/10 rounded-4xl overflow-hidden flex flex-col transition hover:scale-102 max-w-105`}
     >

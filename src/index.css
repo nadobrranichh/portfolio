@@ -17,3 +17,7 @@
   --accent: #c084fc;
   --completion: #5ee9b5;
 }
+
+section {
+  scroll-margin-top: 100px;
+}

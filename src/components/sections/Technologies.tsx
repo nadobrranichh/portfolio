@@ -2,8 +2,10 @@ import type { CSSProperties } from "react";
 import { technologies } from "../../lists/technologies";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../../motion/variants";
+import { useTranslation } from "react-i18next";
 
 export default function Technologies() {
+  const { t } = useTranslation();
   return (
     <motion.section
       variants={fade({ withStagger: true })}
@@ -13,13 +15,16 @@ export default function Technologies() {
       id="technologies"
     >
       <h2 className="text-4xl font-semibold tracking-tight text-content">
-        Technologies I use:
+        {t("technologies.title")}
       </h2>
       <div className="flex flex-col lg:flex-row flex-wrap gap-8 lg:gap-0 justify-around mt-10">
         {technologies.map((group) => (
-          <motion.div variants={fade({ withStagger: true })} key={group.title}>
+          <motion.div
+            variants={fade({ withStagger: true })}
+            key={group.i18nKey}
+          >
             <p className="text-content font-semibold mb-1 text-center">
-              {group.title}
+              {t(`technologies.${group.i18nKey}`)}
             </p>
             <div
               className="flex flex-wrap justify-center lg:grid lg:grid-flow-col gap-3"

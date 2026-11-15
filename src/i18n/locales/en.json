@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "subtitle1": "Hello, I'm",
+    "title": "Nazar Shchepaniak",
+    "subtitle2": "Full-Stack Developer",
+    "description": "I'm a Junior Full-Stack Developer who builds web applications from the ground up. I enjoy working across the entire development process, from creating interfaces to designing APIs and integrating databases. I constantly work on improving my skills, explore new technologies and build practical projects to strengthen my understanding. I care about writing readable, type-safe code, providing good UX, and creating reliable systems."
+  },
+  "technologies": {
+    "title": "Technologies I use",
+    "languages": "Languages",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "databases": "Databases",
+    "tools": "Tools"
+  }
+}

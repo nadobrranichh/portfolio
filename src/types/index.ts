@@ -34,7 +34,7 @@ interface Technology {
 }
 
 export interface TechnologyGroup {
-  title: string;
+  i18nKey: string;
   items: Technology[];
 }
 

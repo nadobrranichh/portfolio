@@ -28,7 +28,7 @@ import { type TechnologyGroup } from "../types";
 
 export const technologies: TechnologyGroup[] = [
   {
-    title: "Languages",
+    i18nKey: "languages",
     items: [
       { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
@@ -36,7 +36,7 @@ export const technologies: TechnologyGroup[] = [
     ],
   },
   {
-    title: "Frontend",
+    i18nKey: "frontend",
     items: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
       { name: "Tailwind CSS", icon: SiTailwindcss, color: "#06B6D4" },
@@ -47,7 +47,7 @@ export const technologies: TechnologyGroup[] = [
     ],
   },
   {
-    title: "Backend",
+    i18nKey: "backend",
     items: [
       { name: "Node.js", icon: SiNodedotjs, color: "#5FA04E" },
       { name: "Express", icon: SiExpress, color: "#E2E8F0" },
@@ -57,7 +57,7 @@ export const technologies: TechnologyGroup[] = [
     ],
   },
   {
-    title: "Databases",
+    i18nKey: "databases",
     items: [
       { name: "SQL", icon: TbSql, color: "#F59E0B" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
@@ -66,7 +66,7 @@ export const technologies: TechnologyGroup[] = [
     ],
   },
   {
-    title: "Tools",
+    i18nKey: "tools",
     items: [
       { name: "Git", icon: SiGit, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#E2E8F0" },

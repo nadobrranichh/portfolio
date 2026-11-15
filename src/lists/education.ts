@@ -2,12 +2,7 @@ import type { CertificateType, DegreeType } from "../types";
 
 export const degrees: DegreeType[] = [
   {
-    title: "Bachelor's Degree, Software Engineering",
-    place: "Lviv Polytechnic National University",
-    period: "2022 - 2026",
-    status: "done",
-    description:
-      "Gained foundational knowledge in software engineering, covering topics from OOP to Design Patterns and Architecture.",
+    i18nKey: "bachelors",
     topics: [
       "OOP",
       "SOLID",
@@ -24,12 +19,7 @@ export const degrees: DegreeType[] = [
     ],
   },
   {
-    title: "Master's Degree, Software Engineering",
-    place: "Lviv Polytechnic National University",
-    period: "2026 - 2027",
-    status: "in-progress",
-    description:
-      "Deepening my expertise and applying the gained knowledge in practice.",
+    i18nKey: "masters",
   },
 ];
 

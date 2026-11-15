@@ -3,9 +3,12 @@ import Badge from "./Badge";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../motion/variants";
 import useBreakpoints from "../hooks/useBreakpoints";
+import { useTranslation } from "react-i18next";
 
 export default function DegreeItem({ item }: { item: DegreeType }) {
-  const isDone = item.status === "done";
+  const { t } = useTranslation();
+  const status = t(`education.university.${item.i18nKey}.status`);
+  const isDone = status === "Completed" || status === "Завершено";
   const { isLg } = useBreakpoints();
 
   return (
@@ -32,14 +35,18 @@ export default function DegreeItem({ item }: { item: DegreeType }) {
       />
       <div className="text-start lg:flex lg:flex-col lg:items-center lg:text-center mt-4">
         <Badge
-          color={item.status === "done" ? "completion" : "accent"}
-          text={item.status === "done" ? "Completed" : "In Progress"}
+          color={isDone ? "completion" : "accent"}
+          text={t(`education.university.${item.i18nKey}.status`)}
         />
-        <h4 className="text-lg font-semibold text-content">{item.title}</h4>
+        <h4 className="text-lg font-semibold text-content">
+          {t(`education.university.${item.i18nKey}.title`)}
+        </h4>
         <p className="mt-1 text-sm text-slate-400">
-          {item.place}, {item.period}
+          {t(`education.university.${item.i18nKey}.subtitle1`)}
         </p>
-        <p className="mt-3 max-w-prose text-slate-300">{item.description}</p>
+        <p className="mt-3 max-w-prose text-slate-300">
+          {t(`education.university.${item.i18nKey}.subtitle2`)}
+        </p>
       </div>
       {item.topics && (
         <div className="flex gap-1 flex-wrap lg:justify-center mt-2">

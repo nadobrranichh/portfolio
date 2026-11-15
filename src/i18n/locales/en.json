@@ -12,5 +12,33 @@
     "backend": "Back-End",
     "databases": "Databases",
     "tools": "Tools"
+  },
+  "education": {
+    "title": "Education",
+    "university": {
+      "title": "University Studies",
+      "bachelors": {
+        "title": "Bachelor's Degree, Software Engineering",
+        "subtitle1": "Lviv Polytechnic National University, 2022 - 2026",
+        "subtitle2": "Gained foundational knowledge in software engineering, covering topics from OOP to Design Patterns and Architecture.",
+        "status": "Completed"
+      },
+      "masters": {
+        "title": "Master's Degree, Software Engineering",
+        "subtitle1": "Lviv Polytechnic National University, 2026 - 2027",
+        "subtitle2": "Deepening my expertise and applying the gained knowledge in practice.",
+        "status": "In Progress"
+      }
+    },
+    "courses": {
+      "by": "by",
+      "done": {
+        "title": "Course Certificates",
+        "see": "See certificate"
+      },
+      "learning": {
+        "title": "Learning now"
+      }
+    }
   }
 }

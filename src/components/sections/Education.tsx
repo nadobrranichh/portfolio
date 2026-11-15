@@ -4,10 +4,12 @@ import DegreeItem from "../DegreeItem";
 import CertificateCard from "../CertificateCard";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../../motion/variants";
+import { useTranslation } from "react-i18next";
 
 const INITIAL_CERTS = 4;
 
 export default function Education() {
+  const { t } = useTranslation();
   const [showAll, setShowAll] = useState(false);
   const visibleCerts = showAll
     ? certificates
@@ -22,12 +24,12 @@ export default function Education() {
         animate="visible"
         className="text-4xl font-semibold tracking-tight text-content"
       >
-        Education
+        {t("education.title")}
       </motion.h2>
 
       <motion.div variants={fade()}>
         <h3 className="text-xl font-semibold text-content">
-          University Studies
+          {t("education.university.title")}
         </h3>
         <div className="relative mt-6">
           <span
@@ -42,7 +44,7 @@ export default function Education() {
             className="space-y-10 lg:grid lg:grid-cols-2"
           >
             {degrees.map((d) => (
-              <DegreeItem key={d.title} item={d} />
+              <DegreeItem key={d.i18nKey} item={d} />
             ))}
           </motion.ul>
         </div>
@@ -50,7 +52,7 @@ export default function Education() {
 
       <motion.div variants={fade()}>
         <h3 className="text-xl font-semibold text-content">
-          Course Certificates
+          {t("education.courses.done.title")}
         </h3>
         <motion.ul
           variants={fade({ withStagger: true })}
@@ -76,7 +78,9 @@ export default function Education() {
       </motion.div>
 
       <motion.div variants={fade()}>
-        <h3 className="text-xl font-semibold text-content">Learning now</h3>
+        <h3 className="text-xl font-semibold text-content">
+          {t("education.courses.learning.title")}
+        </h3>
         <motion.ul
           variants={fade({ withStagger: true })}
           initial="hidden"

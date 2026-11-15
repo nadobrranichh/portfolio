@@ -1,11 +1,7 @@
 import type { IconType } from "react-icons";
 
 export interface DegreeType {
-  title: string;
-  place: string;
-  period: string;
-  status: string;
-  description: string;
+  i18nKey: string;
   topics?: string[];
 }
 

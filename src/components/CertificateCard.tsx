@@ -3,9 +3,11 @@ import type { CertificateType } from "../types";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../motion/variants";
 import useBreakpoints from "../hooks/useBreakpoints";
+import { useTranslation } from "react-i18next";
 
 export default function CertificateCard({ item }: { item: CertificateType }) {
   const { isLg } = useBreakpoints();
+  const { t } = useTranslation();
 
   return (
     <motion.li
@@ -31,11 +33,13 @@ export default function CertificateCard({ item }: { item: CertificateType }) {
           {item.year && `, ${item.year}`}
         </p>
         {item.author && (
-          <p className="mt-1 text-sm text-slate-400">by: {item.author}</p>
+          <p className="mt-1 text-sm text-slate-400">
+            {t("education.courses.by")}: {item.author}
+          </p>
         )}
         {item.url && (
           <span className="mt-3 inline-block text-sm text-completion underline-offset-4 group-hover:underline">
-            See certificate
+            {t("education.courses.done.see")}
           </span>
         )}
       </Link>

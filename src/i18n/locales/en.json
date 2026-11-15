@@ -1,4 +1,11 @@
 {
+  "header": {
+    "about": "About",
+    "education": "Education",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
   "hero": {
     "subtitle1": "Hello, I'm",
     "title": "Nazar Shchepaniak",
@@ -81,5 +88,10 @@
         "description": "A Paint-inspired drawing web application that allows multiple users to draw together on a shared canvas."
       }
     ]
+  },
+  "contact": {
+    "title": "Let's get to know each other",
+    "subtitle": "I'm looking for my next role, remote or on-site in Lviv, Ukraine. Whether it’s an open position, a project, or just a question, my inbox is open.",
+    "downloadResume": "Download resume"
   }
 }

@@ -11,16 +11,16 @@ import UkraineFlagImg from "../assets/flags/flag-uk.webp";
 import UKFlagImg from "../assets/flags/flag-en.webp";
 
 export default function Header() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { isMd } = useBreakpoints();
 
   const links = [
-    { label: "About", url: "/" },
-    { label: "Education", url: "/#education" },
-    { label: "Projects", url: "/#projects" },
-    { label: "Blog", url: "/blog" },
-    { label: "Contact", url: "/#contact" },
+    { i18nKey: "about", url: "/" },
+    { i18nKey: "education", url: "/#education" },
+    { i18nKey: "projects", url: "/#projects" },
+    { i18nKey: "blog", url: "/blog" },
+    { i18nKey: "contact", url: "/#contact" },
   ];
 
   const flagUrl = i18n.language === "en" ? UKFlagImg : UkraineFlagImg;
@@ -38,9 +38,9 @@ export default function Header() {
     <header className="my-5 lg:mb-8 px-4 flex justify-between lg:justify-center sticky top-5 flex-wrap gap-5 z-100">
       {isMd && (
         <div className={containerStyle}>
-          {links.map(({ label, url }) => (
-            <Link key={label} to={url}>
-              {label}
+          {links.map(({ i18nKey, url }) => (
+            <Link key={i18nKey} to={url}>
+              {t(`header.${i18nKey}`)}
             </Link>
           ))}
         </div>
@@ -68,14 +68,14 @@ export default function Header() {
             exit="exit"
             className={`${containerStyle} flex-col ml-auto absolute right-4 top-18`}
           >
-            {links.map(({ label, url }) => (
+            {links.map(({ i18nKey, url }) => (
               <Link
                 className="block text-end"
                 onClick={toggleSidebar}
-                key={label}
+                key={i18nKey}
                 to={url}
               >
-                {label}
+                {t(`header.${i18nKey}`)}
               </Link>
             ))}
           </motion.div>

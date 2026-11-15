@@ -3,8 +3,10 @@ import { contact } from "../lists/contact";
 import { LuDownload } from "react-icons/lu";
 import { motion } from "motion/react";
 import { fade, viewPortValues } from "../motion/variants";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer
       id="contact"
@@ -17,7 +19,7 @@ export default function Footer() {
         viewport={viewPortValues}
         className="text-4xl font-semibold"
       >
-        Let's get to know each other
+        {t("contact.title")}
       </motion.h2>
       <motion.p
         variants={fade()}
@@ -26,10 +28,7 @@ export default function Footer() {
         viewport={viewPortValues}
         className="text-slate-300"
       >
-        I'm looking for my next role, remote or on-site in Lviv, Ukraine.
-        <br />
-        Whether it’s an open position, a project, or just a question, my inbox
-        is open.
+        {t("contact.subtitle")}
       </motion.p>
 
       <motion.div
@@ -49,7 +48,7 @@ export default function Footer() {
               <item.icon className="rotate-360 transition-all duration-400 group-hover:rotate-0 group-hover:mr-2" />
               <div className="grid grid-cols-[0fr] transition-all duration-400 group-hover:grid-cols-[1fr]">
                 <p className="overflow-hidden text-nowrap">
-                  {item.title}
+                  {item.title}{" "}
                   <span className="text-slate-400 opacity-85">{item.user}</span>
                 </p>
               </div>
@@ -63,11 +62,11 @@ export default function Footer() {
           className="rounded-xl flex items-center gap-2 px-3 py-2 border border-content transition-all hover:scale-105"
         >
           <LuDownload />
-          Download resume
+          {t("contact.downloadResume")}
         </Link>
       </motion.div>
       <p className="mt-30 mb-10 w-full opacity-85">
-        @ Nazar Shchepaniak, {new Date().getFullYear()}
+        &copy; {t("hero.title")}, {new Date().getFullYear()}
       </p>
     </footer>
   );

@@ -4,8 +4,8 @@ export default function ScrollToHash() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (hash) {
-      const id = hash.slice(1);
+    if (hash || pathname === "/") {
+      const id = hash.slice(1) || "root";
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     } else window.scrollTo({ top: 0 });
   }, [pathname, hash]);

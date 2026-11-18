@@ -31,4 +31,4 @@ export function fade({
   };
 }
 
-export const viewPortValues = { amount: 0.35, once: true };
+export const viewPortValues = { amount: 0.4, once: true };

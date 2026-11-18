@@ -57,13 +57,14 @@ export default function Footer() {
         ))}
       </motion.div>
       <motion.div variants={fade()} initial="hidden" whileInView="visible">
-        <Link
-          to=""
+        <a
+          href="/Nazar Shchepaniak - Resume.pdf"
+          target="_blank"
           className="rounded-xl flex items-center gap-2 px-3 py-2 border border-content transition-all hover:scale-105"
         >
           <LuDownload />
           {t("contact.downloadResume")}
-        </Link>
+        </a>
       </motion.div>
       <p className="mt-30 mb-10 w-full opacity-85">
         &copy; {t("hero.title")}, {new Date().getFullYear()}

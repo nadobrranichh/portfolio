@@ -20,7 +20,7 @@ export default function NotFoundPage() {
       </motion.h2>
       <motion.div variants={fade()}>
         <Link
-          to=""
+          to="/"
           className="rounded-xl flex items-center gap-2 px-3 py-2 border border-content transition-all hover:scale-105"
         >
           {t("notFound.btnText")}

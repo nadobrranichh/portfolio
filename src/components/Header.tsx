@@ -46,10 +46,13 @@ export default function Header() {
         </div>
       )}
       <div className="flex gap-5">
-        <button className={containerStyle} onClick={toggleLanguage}>
+        <button
+          className={`${containerStyle} cursor-pointer`}
+          onClick={toggleLanguage}
+        >
           <img src={flagUrl} className="rounded-full size-6" />
         </button>
-        <button className={containerStyle}>
+        <button className={`${containerStyle} cursor-pointer`}>
           <FaMusic className="my-auto" />
         </button>
       </div>
